@@ -72,7 +72,7 @@ export default class CognitoUserSession {
 	 */
 	isValid() {
 		const now = Math.floor(new Date() / 1000);
-		const adjusted = now - this.clockDrift;
+		const adjusted = now;// - this.clockDrift;
 		
 		return (
 			adjusted < this.accessToken.getExpiration() &&
